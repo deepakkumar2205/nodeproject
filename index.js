@@ -85,8 +85,25 @@ app.get("/show",function(request, response){
         }
     })
 })
+/*
+//! To Retrive all the text file in the particular folder. (Another way of approach to show)
+
+app.get("/show",function(request, response){
+
+   let files= fs.readdirSync('./store-file-folder')
+
+   let arr=[];
+   for (let file of files){
+    let s=fs.readFileSync(`./store-file-folder/${file}`,"utf-8")
+    arr.push({[file]:s})
+   }
+   if(arr.length ==0){
+       response.status(404).send({message:'no data found'});
+   }else{
+       response.send(arr);
+    }
+})
+*/
 
 app.listen(process.env.PORT||4000, () => console.log(`The server started in: ${PORTno} ✨✨`));
 
-
-//going to create end point to create a text file in a particular folder.
