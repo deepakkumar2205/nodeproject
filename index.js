@@ -2,9 +2,9 @@ const express = require("express");
 const fs =require("fs");
 const app = express();
 
-const PORTno = 5000;
+const PORTno = 4000;
 app.get("/", function (request, response) {
-  response.send("🙋‍♂️, 🌏 🎊✨🤩");
+  response.send("Welcome🙋‍♂️, 🌏 🎊✨🤩");
 });
 
 const date_time=()=>{
@@ -86,7 +86,7 @@ app.get("/show",function(request, response){
     })
 })
 
-app.listen(process.env.port||PORTno, () => console.log(`The server started in: ${PORTno} ✨✨`));
+app.listen(process.env.PORT||4000, () => console.log(`The server started in: ${PORTno} ✨✨`));
 
 
 //going to create end point to create a text file in a particular folder.
